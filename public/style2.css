@@ -96,17 +96,19 @@ ul {
 ul li {
   background-color: #f0f1f5;
   color: #2c2c2c;
+  text-align: left;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  word-wrap: break-word;
+  flex-wrap: nowrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
   border-radius: 5px;
   min-height: 30px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
-
 ul li button {
   height: 30px;
   width: 60px;
