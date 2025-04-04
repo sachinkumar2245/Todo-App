@@ -1,0 +1,25 @@
+/* Theme Classes */
+.light-mode {
+    background-color: #FAF9F6;
+    color: #2c2c2c;
+  }
+  
+  .dark-theme {
+    background-color: #444;
+    color: white;
+  }
+  
+  /* Toggle Button Classes */
+  .light-toggle {
+    background-color: white !important;
+    color: black !important;
+    border-color: #666 !important;
+  }
+  
+  .dark-toggle {
+    background-color: rgb(10, 10, 10) !important;
+    color: white !important;
+    border-color: #ccc !important;
+  }
+  
+  /* Original span styling remains, but these class styles will override when applied */

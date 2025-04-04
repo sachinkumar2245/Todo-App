@@ -1,22 +1,35 @@
 const toggle = document.querySelector('span');
 const body = document.querySelector('body');
 
+// Initial setup based on default mode (assuming starting in light mode)
+if (!body.classList.contains('light-mode')) {
+    body.classList.add('light-mode');
+}
+updateTheme();
+
 toggle.addEventListener('click', () => {
-    if (body.classList.contains('light-mode')) {
-        body.classList.remove('light-mode');
-        body.style.backgroundColor = '#222'; // Dark mode
-        body.style.color = "white";
-        toggle.classList.remove('bg-color');
-        toggle.style.backgroundColor = 'white'
-        toggle.style.color = 'black'
-        toggle.innerHTML = 'Light Mode';
-    } else {
-        body.classList.add('light-mode');
-        toggle.classList.remove('bg-color');
-        body.style.backgroundColor = '#FAF9F6'; // Light mode
-        body.style.color = 'black'
-        toggle.style.backgroundColor = 'black'
-        toggle.style.color = 'white'
-        toggle.innerHTML = 'Dark Mode';
-    }
+    // Toggle the light-mode class
+    body.classList.toggle('light-mode');
+    
+    // Update the theme based on the current state
+    updateTheme();
 });
+
+function updateTheme() {
+    const isLightMode = body.classList.contains('light-mode');
+    
+    // Update text content
+    toggle.textContent = isLightMode ? 'Dark Mode' : 'Light Mode';
+    
+    // Clear any existing theme classes from toggle
+    toggle.classList.remove('light-toggle', 'dark-toggle');
+    
+    // Apply appropriate classes
+    if (isLightMode) {
+        body.classList.remove('dark-theme');
+        toggle.classList.add('dark-toggle');
+    } else {
+        body.classList.add('dark-theme');
+        toggle.classList.add('light-toggle');
+    }
+}

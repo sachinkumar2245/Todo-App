@@ -21,13 +21,10 @@ span {
   height: 25px;
   width: 100px;
   cursor: pointer;
-  background-color: #e9e9ec;
-  color: #333;
+  /* background-color: #e9e9ec; */
+  color: #0e0e0e;
 }
 
-.bg-color {
-  background: linear-gradient(135deg, #dcdfe3, #f4f4f6); /* Soft gradient */
-}
 
 .container {
   display: flex;
